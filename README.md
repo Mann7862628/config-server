@@ -1,2 +1,2 @@
-﻿# Central config for End_To_End microservices
-# Used by Spring Cloud Config Server
+# End-to-end microservice configs for Spring Cloud Config Server
+# Served from: https://github.com/h4915577/java-senior-dev-refresher/tree/main/config-repo
