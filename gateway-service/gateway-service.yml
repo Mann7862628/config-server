@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  
+spring:
+  config:
+    import: configserver:http://localhost:8888
+    
+    
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            
+          #Account-service
+            - id: ACCOUNT-SERVICE
+              uri: lb://ACCOUNT-SERVICE
+              predicates: 
+                - Path=/accounts/**
+                
+ eureka:
+   client:
+     service-url:
+       defaultZone: http://localhost:8761/eureka/
+     register-with-eureka: true
+     fetch-registry: true
+     
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
