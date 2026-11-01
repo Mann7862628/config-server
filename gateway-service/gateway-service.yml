@@ -3,12 +3,6 @@ server:
   
 
 spring:
-  application:
-    name: gateway-service
-
-  config:
-    import: configserver:http://localhost:8888
-     
   cloud:
     gateway:
       server:
