@@ -1,7 +1,11 @@
 server:
   port: 8081
   
+
 spring:
+  application:
+    name: gateway-service
+
   config:
     import: configserver:http://localhost:8888
     
@@ -17,13 +21,6 @@ spring:
               uri: lb://ACCOUNT-SERVICE
               predicates: 
                 - Path=/accounts/**
-                
- eureka:
-   client:
-     service-url:
-       defaultZone: http://localhost:8761/eureka/
-     register-with-eureka: true
-     fetch-registry: true
      
 management:
   endpoints:
