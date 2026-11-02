@@ -13,7 +13,7 @@ spring:
             - id: ACCOUNT-SERVICE
               uri: lb://ACCOUNT-SERVICE
               predicates: 
-                - Path=/account/**
+                - Path=/accounts/**
      
 management:
   endpoints:
